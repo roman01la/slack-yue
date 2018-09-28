@@ -1,0 +1,24 @@
+{
+  "name": "react-yue-app",
+  "private": true,
+  "version": "1.0.0",
+  "main": "out/main.js",
+  "license": "MIT",
+  "dependencies": {
+    "gui": "^0.5.0",
+    "parse-color": "^1.0.0",
+    "react": "^16.5.2",
+    "react-reconciler": "^0.15.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.17.5",
+    "yackage": "^0.2.6"
+  },
+  "scripts": {
+    "postinstall": "yackage install",
+    "build": "yackage dist build",
+    "ui:watch": "clj --main cljs.main --target node --watch src/cljs --compile yue.core",
+    "ui:build": "clj --main cljs.main --target node --optimizations simple --compile yue.core",
+    "start": "nodemon --watch out/main.js --exec yackage start"
+  }
+}
